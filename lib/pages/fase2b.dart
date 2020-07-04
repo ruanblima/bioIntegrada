@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biointegrada/main.dart';
 import 'package:biointegrada/pages/fase2c.dart';
 import 'package:flutter/material.dart';
@@ -67,21 +68,26 @@ class _Fase2bState extends State<Fase2b> {
     ));
   }
 
-  void _alertVoceAcertou() {
+  void _alertVoceAcertou(size) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: new Text("Parabéns!",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 25.0,
-                  fontFamily: "SnigletRegular")),
-          content: new Text("Você acertou, vamos para o próximo desafio.",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 20.0,
-                  fontFamily: "SnigletRegular")),
+          title: AutoSizeText(
+            "Parabéns!",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.8, 20),
+                fontFamily: "PoetsenOne"),
+            maxLines: 1,
+          ),
+          content: AutoSizeText(
+            "Você acertou, vamos para o próximo desafio.",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.04, 15),
+                fontFamily: "SnigletRegular"),
+          ),
           actions: <Widget>[
             new FlatButton.icon(
               color: Colors.lightGreen,
@@ -94,11 +100,11 @@ class _Fase2bState extends State<Fase2b> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: Text(
-                'Fechar',
+              label: AutoSizeText(
+                "Fechar",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: _maxValue(size.width * 0.08, 20),
                     fontFamily: "SnigletRegular"),
               ),
             ),
@@ -108,21 +114,27 @@ class _Fase2bState extends State<Fase2b> {
     );
   }
 
-  void _alertVoceErrou() {
+  void _alertVoceErrou(size) {
+    print(size.width * 0.04);
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: new Text("Não foi dessa vez!",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 25.0,
-                  fontFamily: "SnigletRegular")),
-          content: new Text("Você errou, vamos tentar mais uma vez.",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 20.0,
-                  fontFamily: "SnigletRegular")),
+          title: AutoSizeText(
+            "Não foi dessa vez!",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.8, 20),
+                fontFamily: "PoetsenOne"),
+            maxLines: 1,
+          ),
+          content: AutoSizeText(
+            "Você errou, vamos tentar mais uma vez.",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.04, 15),
+                fontFamily: "SnigletRegular"),
+          ),
           actions: <Widget>[
             new FlatButton.icon(
               color: Colors.lightGreen,
@@ -135,11 +147,11 @@ class _Fase2bState extends State<Fase2b> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: Text(
-                'Fechar',
+              label: AutoSizeText(
+                "Fechar",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: _maxValue(size.width * 0.08, 20),
                     fontFamily: "SnigletRegular"),
               ),
             ),
@@ -175,12 +187,9 @@ class _Fase2bState extends State<Fase2b> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: AutoSizeText(
           "BioIntegrada",
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: _maxValue(size.width * 0.07, 25),
-              fontFamily: "PoetsenOne"),
+          style: TextStyle(color: Colors.white, fontFamily: "PoetsenOne"),
         ),
         actions: <Widget>[
           MaterialButton(
@@ -198,209 +207,195 @@ class _Fase2bState extends State<Fase2b> {
         backgroundColor: Colors.lightGreen,
         centerTitle: true,
       ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.01),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "Fase 2",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.09, 33),
-                        fontFamily: "PoetsenOne"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.01),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: _maxValue(size.width * 0.25, 85),
+                      maxHeight: _maxValue(size.height * 0.25, 40),
+                    ),
+                    child: AutoSizeText(
+                      "Fase 2",
+                      style: TextStyle(
+                          color: Colors.lightGreen,
+                          fontSize: _maxValue(size.width * 0.09, 38),
+                          fontFamily: "PoetsenOne"),
+                      maxLines: 1,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "Em cada imagem dos tecidos histológicos, ",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.043, 16),
-                        fontFamily: "SnigletRegular"),
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: size.width,
+                  //maxHeight: _maxValue(size.height * 0.30, 200),
+                ),
+                child: AutoSizeText(
+                  "Em cada imagem dos tecidos histológicos, escolha a opção que classifica corretamente o tipo de tecido representado.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontFamily: "SnigletRegular"),
+                  maxLines: 3,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.04),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 112.48,
+                        maxWidth: 169.2,
+                      ),
+                      child: Container(
+                        child: Image.asset("images/fase2/tecidoMuscular1.png",
+                            fit: BoxFit.cover,
+                            height: size.height * 0.19,
+                            width: size.width * 0.47),
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "escolha a opção que classifica corretamente ",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.043, 16),
-                        fontFamily: "SnigletRegular"),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.02),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 112.48,
+                        maxWidth: 169.2,
+                      ),
+                      child: Container(
+                        child: Image.asset("images/fase2/tecidoMuscular2.png",
+                            fit: BoxFit.cover,
+                            height: size.height * 0.19,
+                            width: size.width * 0.47),
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "o tipo de tecido representado.",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.043, 16),
-                        fontFamily: "SnigletRegular"),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.04),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(),
-                  child: ConstrainedBox(
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.025),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ConstrainedBox(
                     constraints: BoxConstraints(
                       maxHeight: 112.48,
                       maxWidth: 169.2,
                     ),
                     child: Container(
-                      child: Image.asset("images/fase2/tecidoMuscular1.png",
+                      child: Image.asset("images/fase2/tecidoMuscular3.png",
                           fit: BoxFit.cover,
                           height: size.height * 0.19,
                           width: size.width * 0.47),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.02),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: 112.48,
-                      maxWidth: 169.2,
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.025),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  DropdownButton(
+                    items: listDrop,
+                    value: selected,
+                    iconSize: _maxValue(size.width * 0.05, 22),
+                    elevation: 16,
+                    hint: AutoSizeText(
+                      "Selecione uma opção",
+                      style:
+                          TextStyle(fontSize: _maxValue(size.width * 0.04, 15)),
                     ),
-                    child: Container(
-                      child: Image.asset("images/fase2/tecidoMuscular2.png",
-                          fit: BoxFit.cover,
-                          height: size.height * 0.19,
-                          width: size.width * 0.47),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.025),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: 112.48,
-                    maxWidth: 169.2,
-                  ),
-                  child: Container(
-                    child: Image.asset("images/fase2/tecidoMuscular3.png",
-                        fit: BoxFit.cover,
-                        height: size.height * 0.19,
-                        width: size.width * 0.47),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.025),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                DropdownButton(
-                  items: listDrop,
-                  value: selected,
-                  iconSize: _maxValue(size.width * 0.05, 22),
-                  elevation: 16,
-                  hint: Text(
-                    "Selecione uma opção",
-                    style:
-                        TextStyle(fontSize: _maxValue(size.width * 0.05, 19)),
-                  ),
-                  onChanged: (value) {
-                    selected = value;
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.025),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(),
-                  child: FlatButton(
-                    color: Colors.lightGreen,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {
-                      Navigator.pop(context);
+                    onChanged: (value) {
+                      selected = value;
+                      setState(() {});
                     },
-                    child: Text(
-                      "RETORNAR",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: _maxValue(size.width * 0.06, 21.59),
-                          fontFamily: "SnigletRegular"),
-                    ),
-                    textColor: Colors.white,
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.04),
-                  child: FlatButton(
-                    color: Colors.lightGreen,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {
-                      if (selected == "tecidosMusculares") {
-                        _alertVoceAcertou();
-                        carregar();
-                      } else {
-                        _alertVoceErrou();
-                      }
-                    },
-                    child: Text(
-                      "  AVANÇAR  ",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: _maxValue(size.width * 0.06, 21.59),
-                          fontFamily: "SnigletRegular"),
-                    ),
-                    textColor: Colors.white,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.025),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "RETORNAR",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                          maxLines: 1,
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.04),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        if (selected == "tecidosMusculares") {
+                          _alertVoceAcertou(size);
+                          carregar();
+                        } else {
+                          _alertVoceErrou(size);
+                        }
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "  AVANÇAR  ",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

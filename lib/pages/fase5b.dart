@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biointegrada/main.dart';
 import 'package:biointegrada/pages/fase6.dart';
 import 'package:flutter/material.dart';
@@ -29,21 +30,26 @@ class _Fase5bState extends State<Fase5b> {
     });
   }
 
-  void _alertVoceAcertou() {
+  void _alertVoceAcertou(size) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: new Text("Parabéns!",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 25.0,
-                  fontFamily: "SnigletRegular")),
-          content: new Text("Você acertou, vamos para o próximo desafio.",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 20.0,
-                  fontFamily: "SnigletRegular")),
+          title: AutoSizeText(
+            "Parabéns!",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.8, 20),
+                fontFamily: "PoetsenOne"),
+            maxLines: 1,
+          ),
+          content: AutoSizeText(
+            "Você acertou, vamos para o próximo desafio.",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.04, 15),
+                fontFamily: "SnigletRegular"),
+          ),
           actions: <Widget>[
             new FlatButton.icon(
               color: Colors.lightGreen,
@@ -56,11 +62,11 @@ class _Fase5bState extends State<Fase5b> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: Text(
-                'Fechar',
+              label: AutoSizeText(
+                "Fechar",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: _maxValue(size.width * 0.08, 20),
                     fontFamily: "SnigletRegular"),
               ),
             ),
@@ -70,21 +76,27 @@ class _Fase5bState extends State<Fase5b> {
     );
   }
 
-  void _alertVoceErrou() {
+  void _alertVoceErrou(size) {
+    print(size.width * 0.04);
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: new Text("Não foi dessa vez!",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 25.0,
-                  fontFamily: "SnigletRegular")),
-          content: new Text("Você errou, vamos tentar mais uma vez.",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 20.0,
-                  fontFamily: "SnigletRegular")),
+          title: AutoSizeText(
+            "Não foi dessa vez!",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.8, 20),
+                fontFamily: "PoetsenOne"),
+            maxLines: 1,
+          ),
+          content: AutoSizeText(
+            "Você errou, vamos tentar mais uma vez.",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.04, 15),
+                fontFamily: "SnigletRegular"),
+          ),
           actions: <Widget>[
             new FlatButton.icon(
               color: Colors.lightGreen,
@@ -97,11 +109,11 @@ class _Fase5bState extends State<Fase5b> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: Text(
-                'Fechar',
+              label: AutoSizeText(
+                "Fechar",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: _maxValue(size.width * 0.08, 20),
                     fontFamily: "SnigletRegular"),
               ),
             ),
@@ -136,12 +148,9 @@ class _Fase5bState extends State<Fase5b> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: AutoSizeText(
           "BioIntegrada",
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: _maxValue(size.width * 0.07, 25),
-              fontFamily: "PoetsenOne"),
+          style: TextStyle(color: Colors.white, fontFamily: "PoetsenOne"),
         ),
         actions: <Widget>[
           MaterialButton(
@@ -159,178 +168,181 @@ class _Fase5bState extends State<Fase5b> {
         backgroundColor: Colors.lightGreen,
         centerTitle: true,
       ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.01),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "Fase 5",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.09, 33),
-                        fontFamily: "PoetsenOne"),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "Marque a imagem que representa corretamente a ",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.043, 16),
-                        fontFamily: "SnigletRegular"),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "localização dos órgãos no corpo feminino.",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.043, 16),
-                        fontFamily: "SnigletRegular"),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.06),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(),
-                  child: ConstrainedBox(
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.01),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ConstrainedBox(
                     constraints: BoxConstraints(
-                      maxHeight: 248.64,
-                      maxWidth: 144.0,
+                      maxWidth: _maxValue(size.width * 0.25, 85),
+                      maxHeight: _maxValue(size.height * 0.25, 40),
                     ),
-                    child: Container(
-                      child: Image.asset(caminhoImagem,
-                          fit: BoxFit.cover,
-                          height: size.height * 0.42,
-                          width: size.width * 0.40),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.07),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: 248.64,
-                      maxWidth: 144.0,
-                    ),
-                    child: Container(
-                      child: Image.asset(caminhoImagem2,
-                          fit: BoxFit.cover,
-                          height: size.height * 0.42,
-                          width: size.width * 0.40),
+                    child: AutoSizeText(
+                      "Fase 5",
+                      style: TextStyle(
+                          color: Colors.lightGreen,
+                          fontSize: _maxValue(size.width * 0.09, 38),
+                          fontFamily: "PoetsenOne"),
+                      maxLines: 1,
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.01),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Radio(
-                  value: 1,
-                  activeColor: Colors.lightGreen,
-                  groupValue: selectedRadio,
-                  onChanged: (val) {
-                    resposta = "mulherErrada";
-                    setSelectedRadio(val);
-                  },
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: size.width,
+                  //maxHeight: _maxValue(size.height * 0.30, 200),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.34),
-                  child: Radio(
-                    value: 2,
+                child: AutoSizeText(
+                  "Marque a imagem que representa corretamente a localização dos órgãos no corpo feminino.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontFamily: "SnigletRegular"),
+                  maxLines: 2,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.06),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 248.64,
+                        maxWidth: 144.0,
+                      ),
+                      child: Container(
+                        child: Image.asset(caminhoImagem,
+                            fit: BoxFit.cover,
+                            height: size.height * 0.42,
+                            width: size.width * 0.40),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.07),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxHeight: 248.64,
+                        maxWidth: 144.0,
+                      ),
+                      child: Container(
+                        child: Image.asset(caminhoImagem2,
+                            fit: BoxFit.cover,
+                            height: size.height * 0.42,
+                            width: size.width * 0.40),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.01),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Radio(
+                    value: 1,
                     activeColor: Colors.lightGreen,
                     groupValue: selectedRadio,
                     onChanged: (val) {
-                      resposta = "mulherCerto";
+                      resposta = "mulherErrada";
                       setSelectedRadio(val);
                     },
                   ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.03),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(),
-                  child: FlatButton(
-                    color: Colors.lightGreen,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: Text(
-                      "RETORNAR",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: _maxValue(size.width * 0.06, 21.59),
-                          fontFamily: "SnigletRegular"),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.34),
+                    child: Radio(
+                      value: 2,
+                      activeColor: Colors.lightGreen,
+                      groupValue: selectedRadio,
+                      onChanged: (val) {
+                        resposta = "mulherCerto";
+                        setSelectedRadio(val);
+                      },
                     ),
-                    textColor: Colors.white,
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.04),
-                  child: FlatButton(
-                    color: Colors.lightGreen,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {
-                      if (resposta == "mulherCerto") {
-                        _alertVoceAcertou();
-                        carregar();
-                      } else {
-                        _alertVoceErrou();
-                      }
-                    },
-                    child: Text(
-                      "  AVANÇAR  ",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: _maxValue(size.width * 0.06, 21.59),
-                          fontFamily: "SnigletRegular"),
-                    ),
-                    textColor: Colors.white,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.03),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "RETORNAR",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                          maxLines: 1,
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.04),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        if (resposta == "mulherCerto") {
+                          _alertVoceAcertou(size);
+                          carregar();
+                        } else {
+                          _alertVoceErrou(size);
+                        }
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "  AVANÇAR  ",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

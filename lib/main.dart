@@ -18,14 +18,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-  double _maxValue(double s, double max){
-    if(s < max){
+  double _maxValue(double s, double max) {
+    if (s < max) {
       return s;
-    }else{
+    } else {
       return max;
     }
   }
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(top: size.height * 0.09),
-        child:Column(
+        child: Column(
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(),
@@ -44,35 +44,52 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   ConstrainedBox(
                     constraints: BoxConstraints(
-                      maxHeight: _maxValue(size.height * 0.73, 260), 
-                      maxWidth: _maxValue(size.width * 0.73, 260) ),
+                        maxHeight: _maxValue(size.height * 0.73, 260),
+                        maxWidth: _maxValue(size.width * 0.73, 260)),
                     child: AutoSizeText(
                       "Seja Bem Vindo",
                       style: TextStyle(
                           color: Colors.lightGreen,
                           fontSize: 40.0,
                           fontFamily: "SnigletRegular"),
-                          maxLines: 1,
+                      maxLines: 1,
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: size.height * 0.06),
+              padding: EdgeInsets.only(top: size.height * 0.03),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    maxRadius: _maxValue(size.width * 0.42, 150),
+                    child: Image.asset(
+                      "images/bioIntegrada.jpeg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ConstrainedBox(
                     constraints: BoxConstraints(
-                      maxHeight: 325.6,
-                      maxWidth: 251.9,
-                    ),
-                    child: Container(
-                      child: Image.asset("images/bioIntegrada.png",
-                          fit: BoxFit.cover,
-                          height: size.height * 0.55,
-                          width: size.width * 0.70),
+                        maxHeight: _maxValue(size.height * 0.73, 260),
+                        maxWidth: _maxValue(size.width * 0.73, 260)),
+                    child: AutoSizeText(
+                      "BioIntegrada",
+                      style: TextStyle(
+                          color: Colors.lightGreen,
+                          fontSize: 40.0,
+                          fontFamily: "SnigletRegular"),
+                      maxLines: 1,
                     ),
                   ),
                 ],
@@ -97,14 +114,14 @@ class _HomeState extends State<Home> {
                         maxHeight: _maxValue(size.height * 0.23, 60),
                       ),
                       child: AutoSizeText(
-                      " JOGAR",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: _maxValue(size.width * 0.13, 47),
-                          fontFamily: "SnigletRegular"),
-                    maxLines: 1,
+                        " JOGAR",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: _maxValue(size.width * 0.13, 47),
+                            fontFamily: "SnigletRegular"),
+                        maxLines: 1,
+                      ),
                     ),
-                    ), 
                     textColor: Colors.white,
                     icon: Icon(
                       FontAwesomeIcons.gamepad,
@@ -131,14 +148,14 @@ class _HomeState extends State<Home> {
                         maxHeight: _maxValue(size.height * 0.2, 30),
                       ),
                       child: AutoSizeText(
-                      "SOBRE O BIOINTEGRADA",
-                      style: TextStyle(
-                          color: Colors.lightGreen,
-                          fontSize: _maxValue(size.width * 0.042, 16),
-                          fontFamily: "SnigletRegular"),
-                          maxLines: 1,
+                        "SOBRE O BIOINTEGRADA",
+                        style: TextStyle(
+                            color: Colors.lightGreen,
+                            fontSize: _maxValue(size.width * 0.042, 16),
+                            fontFamily: "SnigletRegular"),
+                        maxLines: 1,
+                      ),
                     ),
-                    ), 
                   ),
                 ],
               ),

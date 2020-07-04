@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biointegrada/main.dart';
 import 'package:biointegrada/pages/fase6b.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,6 @@ class Fase6 extends StatefulWidget {
 }
 
 class _Fase6State extends State<Fase6> {
-
   List<DropdownMenuItem<String>> listDrop = [];
   String selected = null;
 
@@ -54,7 +54,6 @@ class _Fase6State extends State<Fase6> {
       child: new Text("Esquistossomose"),
       value: "esquistossomose",
     ));
-
   }
 
   void _trocarImagem() {
@@ -65,27 +64,32 @@ class _Fase6State extends State<Fase6> {
         caminhoImagem = "images/fase6/ascaridiase.jpg";
       } else if (cont == 4) {
         caminhoImagem = "images/fase6/teniaseECisticercose.jpg";
-      }else if (cont == 1) {
+      } else if (cont == 1) {
         caminhoImagem = "images/fase6/amebiase.jpg";
       }
     });
   }
 
-  void _alertVoceAcertou() {
+  void _alertVoceAcertou(size) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: new Text("Parabéns!",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 25.0,
-                  fontFamily: "SnigletRegular")),
-          content: new Text("Você acertou, vamos para o próximo desafio.",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 20.0,
-                  fontFamily: "SnigletRegular")),
+          title: AutoSizeText(
+            "Parabéns!",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.8, 20),
+                fontFamily: "PoetsenOne"),
+            maxLines: 1,
+          ),
+          content: AutoSizeText(
+            "Você acertou, vamos para o próximo desafio.",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.04, 15),
+                fontFamily: "SnigletRegular"),
+          ),
           actions: <Widget>[
             new FlatButton.icon(
               color: Colors.lightGreen,
@@ -98,11 +102,11 @@ class _Fase6State extends State<Fase6> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: Text(
-                'Fechar',
+              label: AutoSizeText(
+                "Fechar",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: _maxValue(size.width * 0.08, 20),
                     fontFamily: "SnigletRegular"),
               ),
             ),
@@ -112,21 +116,27 @@ class _Fase6State extends State<Fase6> {
     );
   }
 
-  void _alertVoceErrou() {
+  void _alertVoceErrou(size) {
+    print(size.width * 0.04);
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: new Text("Não foi dessa vez!",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 25.0,
-                  fontFamily: "SnigletRegular")),
-          content: new Text("Você errou, vamos tentar mais uma vez.",
-              style: TextStyle(
-                  color: Colors.lightGreen,
-                  fontSize: 20.0,
-                  fontFamily: "SnigletRegular")),
+          title: AutoSizeText(
+            "Não foi dessa vez!",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.8, 20),
+                fontFamily: "PoetsenOne"),
+            maxLines: 1,
+          ),
+          content: AutoSizeText(
+            "Você errou, vamos tentar mais uma vez.",
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: _maxValue(size.width * 0.04, 15),
+                fontFamily: "SnigletRegular"),
+          ),
           actions: <Widget>[
             new FlatButton.icon(
               color: Colors.lightGreen,
@@ -139,11 +149,11 @@ class _Fase6State extends State<Fase6> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: Text(
-                'Fechar',
+              label: AutoSizeText(
+                "Fechar",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 25.0,
+                    fontSize: _maxValue(size.width * 0.08, 20),
                     fontFamily: "SnigletRegular"),
               ),
             ),
@@ -169,9 +179,9 @@ class _Fase6State extends State<Fase6> {
       return max;
     }
   }
+
   @override
   Widget build(BuildContext context) {
-
     MediaQueryData mediaQuery = MediaQuery.of(context);
     Size size = mediaQuery.size;
 
@@ -180,12 +190,9 @@ class _Fase6State extends State<Fase6> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: AutoSizeText(
           "BioIntegrada",
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: _maxValue(size.width * 0.07, 25),
-              fontFamily: "PoetsenOne"),
+          style: TextStyle(color: Colors.white, fontFamily: "PoetsenOne"),
         ),
         actions: <Widget>[
           MaterialButton(
@@ -204,188 +211,185 @@ class _Fase6State extends State<Fase6> {
         backgroundColor: Colors.lightGreen,
         centerTitle: true,
       ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.01),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "Fase 6",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.09, 33),
-                        fontFamily: "PoetsenOne"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.01),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: _maxValue(size.width * 0.25, 85),
+                      maxHeight: _maxValue(size.height * 0.25, 40),
+                    ),
+                    child: AutoSizeText(
+                      "Fase 6",
+                      style: TextStyle(
+                          color: Colors.lightGreen,
+                          fontSize: _maxValue(size.width * 0.09, 38),
+                          fontFamily: "PoetsenOne"),
+                      maxLines: 1,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "Analise as imagens e classifique a qual ciclo de ",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.043, 16),
-                        fontFamily: "SnigletRegular"),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ClipRRect(
-                  child: Text(
-                    "verminose está relacionada.",
-                    style: TextStyle(
-                        color: Colors.lightGreen,
-                        fontSize: _maxValue(size.width * 0.043, 16),
-                        fontFamily: "SnigletRegular"),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.03),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ConstrainedBox(
-              constraints: BoxConstraints(
-                maxHeight: 266.4,
-                maxWidth: 345.59,
-              ),
-              child: Container(
-                child: Image.asset(caminhoImagem,
-                    fit: BoxFit.cover,
-                    height: size.height * 0.45,
-                      width: size.width * 0.96),
+                ],
               ),
             ),
-              ],
-            ), 
-          ),
-
-
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.02),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                DropdownButton(
-              items: listDrop,
-              value: selected,
-              iconSize: _maxValue(size.width * 0.05, 22),
-              elevation: 16,
-              hint: Text(
-                "Selecione uma opção",
-                style: TextStyle(fontSize: _maxValue(size.width * 0.05, 19)),
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: size.width,
+                  //maxHeight: _maxValue(size.height * 0.30, 200),
+                ),
+                child: AutoSizeText(
+                  "Analise as imagens e classifique a qual ciclo de verminose está relacionada.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontFamily: "SnigletRegular"),
+                  maxLines: 2,
+                ),
               ),
-              onChanged: (value) {
-                selected = value;
-                setState(() {});
-              },
             ),
-              ],
-            ), 
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(top: size.height * 0.04),
-            child:Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(),
-                child: FlatButton(
-                  color: Colors.lightGreen,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0)),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    "RETORNAR",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: _maxValue(size.width * 0.06, 21.59),
-                        fontFamily: "SnigletRegular"),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.03),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: 266.4,
+                      maxWidth: 345.59,
+                    ),
+                    child: Container(
+                      child: Image.asset(caminhoImagem,
+                          fit: BoxFit.cover,
+                          height: size.height * 0.45,
+                          width: size.width * 0.96),
+                    ),
                   ),
-                  textColor: Colors.white,
-                ),
+                ],
               ),
-              Padding(
-                padding: EdgeInsets.only(left: size.width * 0.04),
-                child: FlatButton(
-                  color: Colors.lightGreen,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0)),
-                  onPressed: () {
-                    if (cont == 1) {
-                      if (selected == "amebiase") {
-                        cont++;
-                        _alertVoceAcertou();
-                        _trocarImagem();
-                      } else {
-                        _alertVoceErrou();
-                      }
-                    } else if (cont == 2) {
-                      if (selected == "ancilostomoseOuAmarelao") {
-                        cont++;
-                        _alertVoceAcertou();
-                        _trocarImagem();
-                      } else {
-                        _alertVoceErrou();
-                      }
-                    } else if (cont == 3) {
-                      if (selected == "ascaridiase") {
-                        cont++;
-                        _alertVoceAcertou();
-                        _trocarImagem();
-                      } else {
-                        _alertVoceErrou();
-                      }
-                    }  else if (cont == 4) {
-                      if (selected == "teniaseECisticercose") {
-                        cont = 1;
-                        _alertVoceAcertou();
-                        _trocarImagem();
-                        carregar();
-                      } else {
-                        _alertVoceErrou();
-                      }
-                    }
-                  },
-                  child: Text(
-                    "  AVANÇAR  ",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: _maxValue(size.width * 0.06, 21.59),
-                        fontFamily: "SnigletRegular"),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.02),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  DropdownButton(
+                    items: listDrop,
+                    value: selected,
+                    iconSize: _maxValue(size.width * 0.05, 22),
+                    elevation: 16,
+                    hint: AutoSizeText(
+                      "Selecione uma opção",
+                      style:
+                          TextStyle(fontSize: _maxValue(size.width * 0.04, 15)),
+                    ),
+                    onChanged: (value) {
+                      selected = value;
+                      setState(() {});
+                    },
                   ),
-                  textColor: Colors.white,
-                ),
+                ],
               ),
-            ],
-          ),
-          ),
-          
-        ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.04),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "RETORNAR",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                          maxLines: 1,
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.04),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        if (cont == 1) {
+                          if (selected == "amebiase") {
+                            cont++;
+                            _alertVoceAcertou(size);
+                            _trocarImagem();
+                          } else {
+                            _alertVoceErrou(size);
+                          }
+                        } else if (cont == 2) {
+                          if (selected == "ancilostomoseOuAmarelao") {
+                            cont++;
+                            _alertVoceAcertou(size);
+                            _trocarImagem();
+                          } else {
+                            _alertVoceErrou(size);
+                          }
+                        } else if (cont == 3) {
+                          if (selected == "ascaridiase") {
+                            cont++;
+                            _alertVoceAcertou(size);
+                            _trocarImagem();
+                          } else {
+                            _alertVoceErrou(size);
+                          }
+                        } else if (cont == 4) {
+                          if (selected == "teniaseECisticercose") {
+                            cont = 1;
+                            _alertVoceAcertou(size);
+                            _trocarImagem();
+                            carregar();
+                          } else {
+                            _alertVoceErrou(size);
+                          }
+                        }
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "  AVANÇAR  ",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

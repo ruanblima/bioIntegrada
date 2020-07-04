@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biointegrada/main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,6 +17,7 @@ class _ReferenciasState extends State<Referencias> {
       return max;
     }
   }
+
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
@@ -23,12 +25,9 @@ class _ReferenciasState extends State<Referencias> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
+        title: AutoSizeText(
           "BioIntegrada",
-          style: TextStyle(
-              color: Colors.white,
-              fontSize: _maxValue(size.width * 0.07, 25),
-              fontFamily: "PoetsenOne"),
+          style: TextStyle(color: Colors.white, fontFamily: "PoetsenOne"),
         ),
         actions: <Widget>[
           MaterialButton(
