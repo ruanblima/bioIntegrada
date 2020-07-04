@@ -145,7 +145,6 @@ class _Fase3State extends State<Fase3> {
   }
 
   void _alertVoceErrou(size) {
-    print(size.width * 0.04);
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -212,7 +211,6 @@ class _Fase3State extends State<Fase3> {
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     Size size = mediaQuery.size;
-    print(size.width * 0.02);
 
     loadData();
     return Scaffold(

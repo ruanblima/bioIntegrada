@@ -109,7 +109,6 @@ class _Fase7State extends State<Fase7> {
   }
 
   void _alertVoceErrou(size) {
-    print(size.width * 0.04);
     showDialog(
       context: context,
       builder: (BuildContext context) {
