@@ -67,7 +67,7 @@ class _HomeState extends State<Home> {
                     backgroundColor: Colors.white,
                     maxRadius: _maxValue(size.width * 0.42, 150),
                     child: Image.asset(
-                      "images/bioIntegrada.jpeg",
+                      "images/bioIntegrada.png",
                       fit: BoxFit.cover,
                     ),
                   ),

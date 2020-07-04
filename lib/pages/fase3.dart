@@ -293,9 +293,9 @@ class _Fase3State extends State<Fase3> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.only(bottom: 5),
+                            padding: EdgeInsets.only(),
                             child: Padding(
-                              padding: EdgeInsets.only(bottom: 5, left: 5),
+                              padding: EdgeInsets.only(),
                               child: AutoSizeText(
                                 "Figura 1",
                                 style: TextStyle(
@@ -312,7 +312,7 @@ class _Fase3State extends State<Fase3> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.only(bottom: 5),
+                            padding: EdgeInsets.only(),
                             child: ConstrainedBox(
                               constraints: BoxConstraints(
                                 maxHeight: 47.36,
@@ -328,6 +328,197 @@ class _Fase3State extends State<Fase3> {
                           ),
                         ],
                       ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: AutoSizeText(
+                                "Figura 2",
+                                style: TextStyle(
+                                    color: Colors.lightGreen,
+                                    fontSize: _maxValue(size.width * 0.02, 10),
+                                    fontFamily: "PoetsenOne"),
+                                maxLines: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 47.36,
+                                  maxWidth: 64.8,
+                                ),
+                                child: Container(
+                                  child: Image.asset("images/fase3/coracao.png",
+                                      fit: BoxFit.cover,
+                                      height: size.height * 0.08,
+                                      width: size.width * 0.18),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: AutoSizeText(
+                                "Figura 3",
+                                style: TextStyle(
+                                    color: Colors.lightGreen,
+                                    fontSize: _maxValue(size.width * 0.02, 10),
+                                    fontFamily: "PoetsenOne"),
+                                maxLines: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 47.36,
+                                  maxWidth: 64.8,
+                                ),
+                                child: Container(
+                                  child: Image.asset(
+                                      "images/fase3/estomago.jpg",
+                                      fit: BoxFit.cover,
+                                      height: size.height * 0.08,
+                                      width: size.width * 0.18),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: AutoSizeText(
+                                "Figura 4",
+                                style: TextStyle(
+                                    color: Colors.lightGreen,
+                                    fontSize: _maxValue(size.width * 0.02, 10),
+                                    fontFamily: "PoetsenOne"),
+                                maxLines: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 47.36,
+                                  maxWidth: 64.8,
+                                ),
+                                child: Container(
+                                  child: Image.asset("images/fase3/figado.jpg",
+                                      fit: BoxFit.cover,
+                                      height: size.height * 0.08,
+                                      width: size.width * 0.18),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: AutoSizeText(
+                                "Figura 5",
+                                style: TextStyle(
+                                    color: Colors.lightGreen,
+                                    fontSize: _maxValue(size.width * 0.02, 10),
+                                    fontFamily: "PoetsenOne"),
+                                maxLines: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 47.36,
+                                  maxWidth: 64.8,
+                                ),
+                                child: Container(
+                                  child: Image.asset(
+                                      "images/fase3/intestinoFino.jpg",
+                                      fit: BoxFit.cover,
+                                      height: size.height * 0.08,
+                                      width: size.width * 0.18),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            //Row
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: Row(
+                children: <Widget>[
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
@@ -366,8 +557,9 @@ class _Fase3State extends State<Fase3> {
                       ),
                     ],
                   ),
+                  //Column
                   Padding(
-                    padding: EdgeInsets.only(),
+                    padding: EdgeInsets.only(left: 5),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -375,43 +567,7 @@ class _Fase3State extends State<Fase3> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(bottom: 5, left: 5),
-                              child: AutoSizeText(
-                                "Figura 2",
-                                style: TextStyle(
-                                    color: Colors.lightGreen,
-                                    fontSize: _maxValue(size.width * 0.02, 10),
-                                    fontFamily: "PoetsenOne"),
-                                maxLines: 1,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(top: 5),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  maxHeight: 47.36,
-                                  maxWidth: 64.8,
-                                ),
-                                child: Container(
-                                  child: Image.asset("images/fase3/coracao.png",
-                                      fit: BoxFit.cover,
-                                      height: size.height * 0.08,
-                                      width: size.width * 0.18),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(),
+                              padding: EdgeInsets.only(top: 10),
                               child: AutoSizeText(
                                 "Figura 7",
                                 style: TextStyle(
@@ -426,7 +582,7 @@ class _Fase3State extends State<Fase3> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(),
+                              padding: EdgeInsets.only(top: 4),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
                                   maxHeight: 71.03,
@@ -435,7 +591,51 @@ class _Fase3State extends State<Fase3> {
                                 child: Container(
                                   child: Image.asset("images/fase3/osso.jpg",
                                       fit: BoxFit.cover,
-                                      height: size.height * 0.12,
+                                      height: size.height * 0.10,
+                                      width: size.width * 0.16),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  //Column
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(top: 10),
+                              child: AutoSizeText(
+                                "Figura 8",
+                                style: TextStyle(
+                                    color: Colors.lightGreen,
+                                    fontSize: _maxValue(size.width * 0.02, 10),
+                                    fontFamily: "PoetsenOne"),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(top: 4),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 71.03,
+                                  maxWidth: 64.8,
+                                ),
+                                child: Container(
+                                  child: Image.asset("images/fase3/pele.jpg",
+                                      fit: BoxFit.cover,
+                                      height: size.height * 0.10,
                                       width: size.width * 0.18),
                                 ),
                               ),
@@ -445,234 +645,93 @@ class _Fase3State extends State<Fase3> {
                       ],
                     ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 5, left: 5),
-                            child: AutoSizeText(
-                              "Figura 3",
-                              style: TextStyle(
-                                  color: Colors.lightGreen,
-                                  fontSize: _maxValue(size.width * 0.02, 10),
-                                  fontFamily: "PoetsenOne"),
-                              maxLines: 1,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(left: size.width * 0.018),
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(
-                                maxHeight: 47.36,
-                                maxWidth: 64.8,
-                              ),
-                              child: Container(
-                                child: Image.asset("images/fase3/estomago.jpg",
-                                    fit: BoxFit.cover,
-                                    height: size.height * 0.08,
-                                    width: size.width * 0.18),
+                  //Column
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 5),
+                              child: AutoSizeText(
+                                "Figura 9",
+                                style: TextStyle(
+                                    color: Colors.lightGreen,
+                                    fontSize: _maxValue(size.width * 0.02, 10),
+                                    fontFamily: "PoetsenOne"),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 5),
-                            child: AutoSizeText(
-                              "Figura 8",
-                              style: TextStyle(
-                                  color: Colors.lightGreen,
-                                  fontSize: _maxValue(size.width * 0.02, 10),
-                                  fontFamily: "PoetsenOne"),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(left: size.width * 0.015),
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(
-                                maxHeight: 71.03,
-                                maxWidth: 64.8,
-                              ),
-                              child: Container(
-                                child: Image.asset("images/fase3/pele.jpg",
-                                    fit: BoxFit.cover,
-                                    height: size.height * 0.12,
-                                    width: size.width * 0.18),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 47.36,
+                                  maxWidth: 64.8,
+                                ),
+                                child: Container(
+                                  child: Image.asset("images/fase3/pulmao.jpg",
+                                      fit: BoxFit.cover,
+                                      height: size.height * 0.08,
+                                      width: size.width * 0.18),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 5, left: 5),
-                            child: AutoSizeText(
-                              "Figura 4",
-                              style: TextStyle(
-                                  color: Colors.lightGreen,
-                                  fontSize: _maxValue(size.width * 0.02, 10),
-                                  fontFamily: "PoetsenOne"),
-                              maxLines: 1,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(left: size.width * 0.018),
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(
-                                maxHeight: 47.36,
-                                maxWidth: 64.8,
-                              ),
-                              child: Container(
-                                child: Image.asset("images/fase3/figado.jpg",
-                                    fit: BoxFit.cover,
-                                    height: size.height * 0.08,
-                                    width: size.width * 0.18),
+                  //Column
+                  Padding(
+                    padding: EdgeInsets.only(left: 5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 5),
+                              child: AutoSizeText(
+                                "Figura 10",
+                                style: TextStyle(
+                                    color: Colors.lightGreen,
+                                    fontSize: _maxValue(size.width * 0.02, 10),
+                                    fontFamily: "PoetsenOne"),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 5),
-                            child: AutoSizeText(
-                              "Figura 9",
-                              style: TextStyle(
-                                  color: Colors.lightGreen,
-                                  fontSize: _maxValue(size.width * 0.02, 10),
-                                  fontFamily: "PoetsenOne"),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(),
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(
-                                maxHeight: 47.36,
-                                maxWidth: 64.8,
-                              ),
-                              child: Container(
-                                child: Image.asset("images/fase3/pulmao.jpg",
-                                    fit: BoxFit.cover,
-                                    height: size.height * 0.08,
-                                    width: size.width * 0.18),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxHeight: 47.36,
+                                  maxWidth: 72,
+                                ),
+                                child: Container(
+                                  child: Image.asset("images/fase3/rins.jpg",
+                                      fit: BoxFit.cover,
+                                      height: size.height * 0.08,
+                                      width: size.width * 0.2),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 5, left: 5),
-                            child: AutoSizeText(
-                              "Figura 5",
-                              style: TextStyle(
-                                  color: Colors.lightGreen,
-                                  fontSize: _maxValue(size.width * 0.02, 10),
-                                  fontFamily: "PoetsenOne"),
-                              maxLines: 1,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(left: size.width * 0.018),
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(
-                                maxHeight: 47.36,
-                                maxWidth: 64.8,
-                              ),
-                              child: Container(
-                                child: Image.asset(
-                                    "images/fase3/intestinoFino.jpg",
-                                    fit: BoxFit.cover,
-                                    height: size.height * 0.08,
-                                    width: size.width * 0.18),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 5),
-                            child: AutoSizeText(
-                              "Figura 10",
-                              style: TextStyle(
-                                  color: Colors.lightGreen,
-                                  fontSize: _maxValue(size.width * 0.02, 10),
-                                  fontFamily: "PoetsenOne"),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(),
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(
-                                maxHeight: 47.36,
-                                maxWidth: 72,
-                              ),
-                              child: Container(
-                                child: Image.asset("images/fase3/rins.jpg",
-                                    fit: BoxFit.cover,
-                                    height: size.height * 0.08,
-                                    width: size.width * 0.2),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
