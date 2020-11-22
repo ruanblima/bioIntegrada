@@ -77,28 +77,34 @@ class _Fase3State extends State<Fase3> {
     });
   }
 
-  void _alertVoceAcertou(size) {
-    showDialog(
+  Future<void> _alertVoceAcertou(size) async {
+    return showDialog<void>(
       context: context,
+      barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: AutoSizeText(
+          title: Text(
             "Parabéns!",
             style: TextStyle(
                 color: Colors.lightGreen,
                 fontSize: _maxValue(size.width * 0.8, 20),
                 fontFamily: "PoetsenOne"),
-            maxLines: 1,
           ),
-          content: AutoSizeText(
-            "Você acertou, vamos para o próximo desafio.",
-            style: TextStyle(
-                color: Colors.lightGreen,
-                fontSize: _maxValue(size.width * 0.04, 15),
-                fontFamily: "SnigletRegular"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Você acertou, vamos para o próximo desafio.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.04, 15),
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
-            new FlatButton.icon(
+            FlatButton.icon(
               color: Colors.lightGreen,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
@@ -109,7 +115,7 @@ class _Fase3State extends State<Fase3> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: AutoSizeText(
+              label: Text(
                 "Fechar",
                 style: TextStyle(
                     color: Colors.white,
@@ -123,28 +129,34 @@ class _Fase3State extends State<Fase3> {
     );
   }
 
-  void _alertVoceErrou(size) {
-    showDialog(
+  Future<void> _alertVoceErrou(size) async {
+    return showDialog<void>(
       context: context,
+      barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: AutoSizeText(
-            "Não foi dessa vez!",
+          title: Text(
+            'Não foi dessa vez!',
             style: TextStyle(
                 color: Colors.lightGreen,
                 fontSize: _maxValue(size.width * 0.8, 20),
                 fontFamily: "PoetsenOne"),
-            maxLines: 1,
           ),
-          content: AutoSizeText(
-            "Você errou, vamos tentar mais uma vez.",
-            style: TextStyle(
-                color: Colors.lightGreen,
-                fontSize: _maxValue(size.width * 0.04, 15),
-                fontFamily: "SnigletRegular"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Você errou, vamos tentar mais uma vez.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.04, 15),
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
-            new FlatButton.icon(
+            FlatButton.icon(
               color: Colors.lightGreen,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
@@ -155,7 +167,7 @@ class _Fase3State extends State<Fase3> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: AutoSizeText(
+              label: Text(
                 "Fechar",
                 style: TextStyle(
                     color: Colors.white,
@@ -218,6 +230,8 @@ class _Fase3State extends State<Fase3> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(),
@@ -253,9 +267,9 @@ class _Fase3State extends State<Fase3> {
                   "Relacione a imagem do tecido com o seu orgão.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
-                  maxLines: 1,
+                  maxLines: 2,
                 ),
               ),
             ),
@@ -264,6 +278,7 @@ class _Fase3State extends State<Fase3> {
               padding: EdgeInsets.all(5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -274,7 +289,7 @@ class _Fase3State extends State<Fase3> {
                           Padding(
                             padding: EdgeInsets.only(),
                             child: Padding(
-                              padding: EdgeInsets.only(),
+                              padding: EdgeInsets.only(bottom: 15),
                               child: AutoSizeText(
                                 "Figura 1",
                                 style: TextStyle(
@@ -318,7 +333,7 @@ class _Fase3State extends State<Fase3> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(),
+                              padding: EdgeInsets.only(bottom: 15),
                               child: AutoSizeText(
                                 "Figura 2",
                                 style: TextStyle(
@@ -362,7 +377,7 @@ class _Fase3State extends State<Fase3> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(),
+                              padding: EdgeInsets.only(bottom: 15),
                               child: AutoSizeText(
                                 "Figura 3",
                                 style: TextStyle(
@@ -398,14 +413,6 @@ class _Fase3State extends State<Fase3> {
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
-            //Row
-            Padding(
-              padding: EdgeInsets.all(5),
-              child: Row(
-                children: <Widget>[
                   //Column
                   Padding(
                     padding: EdgeInsets.only(left: 5),
@@ -450,6 +457,16 @@ class _Fase3State extends State<Fase3> {
                       ],
                     ),
                   ),
+                ],
+              ),
+            ),
+            //Row
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
                   //Column
                   Padding(
                     padding: EdgeInsets.only(left: 5),
@@ -504,7 +521,7 @@ class _Fase3State extends State<Fase3> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(bottom: 5),
+                              padding: EdgeInsets.only(bottom: 18),
                               child: AutoSizeText(
                                 "Figura 6",
                                 style: TextStyle(
@@ -548,7 +565,7 @@ class _Fase3State extends State<Fase3> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(bottom: 5),
+                              padding: EdgeInsets.only(bottom: 18),
                               child: AutoSizeText(
                                 "Figura 7",
                                 style: TextStyle(
@@ -588,7 +605,7 @@ class _Fase3State extends State<Fase3> {
 
             //Row
             Padding(
-              padding: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.only(top: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -609,7 +626,7 @@ class _Fase3State extends State<Fase3> {
             ),
             //Row
             Padding(
-              padding: EdgeInsets.only(),
+              padding: EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

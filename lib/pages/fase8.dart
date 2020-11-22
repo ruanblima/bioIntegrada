@@ -48,6 +48,8 @@ class _Fase8State extends State<Fase8> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(top: size.height * 0.01),

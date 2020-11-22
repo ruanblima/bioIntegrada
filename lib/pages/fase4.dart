@@ -61,11 +61,6 @@ class _Fase4State extends State<Fase4> {
     ));
 
     listDrop.add(new DropdownMenuItem(
-      child: new Text("Sistema Urinário"),
-      value: "sistemaUrinario",
-    ));
-
-    listDrop.add(new DropdownMenuItem(
       child: new Text("Sistema Linfático"),
       value: "sistemaLinfatico",
     ));
@@ -95,8 +90,6 @@ class _Fase4State extends State<Fase4> {
       } else if (cont == 9) {
         caminhoImagem = "images/fase4/sistemaRespiratorio.jpeg";
       } else if (cont == 10) {
-        caminhoImagem = "images/fase4/sistemaUrinario.jpeg";
-      } else if (cont == 11) {
         caminhoImagem = "images/fase4/sistemaImunologico.png";
       } else if (cont == 1) {
         caminhoImagem = "images/fase4/esqueletico.jpeg";
@@ -104,28 +97,34 @@ class _Fase4State extends State<Fase4> {
     });
   }
 
-  void _alertVoceAcertou(size) {
-    showDialog(
+  Future<void> _alertVoceAcertou(size) async {
+    return showDialog<void>(
       context: context,
+      barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: AutoSizeText(
+          title: Text(
             "Parabéns!",
             style: TextStyle(
                 color: Colors.lightGreen,
                 fontSize: _maxValue(size.width * 0.8, 20),
                 fontFamily: "PoetsenOne"),
-            maxLines: 1,
           ),
-          content: AutoSizeText(
-            "Você acertou, vamos para o próximo desafio.",
-            style: TextStyle(
-                color: Colors.lightGreen,
-                fontSize: _maxValue(size.width * 0.04, 15),
-                fontFamily: "SnigletRegular"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Você acertou, vamos para o próximo desafio.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.04, 15),
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
-            new FlatButton.icon(
+            FlatButton.icon(
               color: Colors.lightGreen,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
@@ -136,7 +135,7 @@ class _Fase4State extends State<Fase4> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: AutoSizeText(
+              label: Text(
                 "Fechar",
                 style: TextStyle(
                     color: Colors.white,
@@ -150,28 +149,34 @@ class _Fase4State extends State<Fase4> {
     );
   }
 
-  void _alertVoceErrou(size) {
-    showDialog(
+  Future<void> _alertVoceErrou(size) async {
+    return showDialog<void>(
       context: context,
+      barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: AutoSizeText(
-            "Não foi dessa vez!",
+          title: Text(
+            'Não foi dessa vez!',
             style: TextStyle(
                 color: Colors.lightGreen,
                 fontSize: _maxValue(size.width * 0.8, 20),
                 fontFamily: "PoetsenOne"),
-            maxLines: 1,
           ),
-          content: AutoSizeText(
-            "Você errou, vamos tentar mais uma vez.",
-            style: TextStyle(
-                color: Colors.lightGreen,
-                fontSize: _maxValue(size.width * 0.04, 15),
-                fontFamily: "SnigletRegular"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Você errou, vamos tentar mais uma vez.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.04, 15),
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
-            new FlatButton.icon(
+            FlatButton.icon(
               color: Colors.lightGreen,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
@@ -182,7 +187,7 @@ class _Fase4State extends State<Fase4> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: AutoSizeText(
+              label: Text(
                 "Fechar",
                 style: TextStyle(
                     color: Colors.white,
@@ -245,6 +250,8 @@ class _Fase4State extends State<Fase4> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(top: size.height * 0.01),
@@ -439,14 +446,6 @@ class _Fase4State extends State<Fase4> {
                             _alertVoceErrou(size);
                           }
                         } else if (cont == 10) {
-                          if (selected == "sistemaUrinario") {
-                            cont++;
-                            _alertVoceAcertou(size);
-                            _trocarImagem();
-                          } else {
-                            _alertVoceErrou(size);
-                          }
-                        } else if (cont == 11) {
                           if (selected == "sistemaImunologico") {
                             cont = 1;
                             _alertVoceAcertou(size);

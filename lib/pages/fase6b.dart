@@ -68,28 +68,34 @@ class _Fase6bState extends State<Fase6b> {
     });
   }
 
-  void _alertVoceAcertou(size) {
-    showDialog(
+  Future<void> _alertVoceAcertou(size) async {
+    return showDialog<void>(
       context: context,
+      barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: AutoSizeText(
+          title: Text(
             "Parabéns!",
             style: TextStyle(
                 color: Colors.lightGreen,
                 fontSize: _maxValue(size.width * 0.8, 20),
                 fontFamily: "PoetsenOne"),
-            maxLines: 1,
           ),
-          content: AutoSizeText(
-            "Você acertou, vamos para o próximo desafio.",
-            style: TextStyle(
-                color: Colors.lightGreen,
-                fontSize: _maxValue(size.width * 0.04, 15),
-                fontFamily: "SnigletRegular"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Você acertou, vamos para o próximo desafio.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.04, 15),
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
-            new FlatButton.icon(
+            FlatButton.icon(
               color: Colors.lightGreen,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
@@ -100,7 +106,7 @@ class _Fase6bState extends State<Fase6b> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: AutoSizeText(
+              label: Text(
                 "Fechar",
                 style: TextStyle(
                     color: Colors.white,
@@ -114,28 +120,34 @@ class _Fase6bState extends State<Fase6b> {
     );
   }
 
-  void _alertVoceErrou(size) {
-    showDialog(
+  Future<void> _alertVoceErrou(size) async {
+    return showDialog<void>(
       context: context,
+      barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: AutoSizeText(
-            "Não foi dessa vez!",
+          title: Text(
+            'Não foi dessa vez!',
             style: TextStyle(
                 color: Colors.lightGreen,
                 fontSize: _maxValue(size.width * 0.8, 20),
                 fontFamily: "PoetsenOne"),
-            maxLines: 1,
           ),
-          content: AutoSizeText(
-            "Você errou, vamos tentar mais uma vez.",
-            style: TextStyle(
-                color: Colors.lightGreen,
-                fontSize: _maxValue(size.width * 0.04, 15),
-                fontFamily: "SnigletRegular"),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Você errou, vamos tentar mais uma vez.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: _maxValue(size.width * 0.04, 15),
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
-            new FlatButton.icon(
+            FlatButton.icon(
               color: Colors.lightGreen,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
@@ -146,7 +158,7 @@ class _Fase6bState extends State<Fase6b> {
                 FontAwesomeIcons.solidWindowClose,
                 color: Colors.white,
               ),
-              label: AutoSizeText(
+              label: Text(
                 "Fechar",
                 style: TextStyle(
                     color: Colors.white,
@@ -210,6 +222,8 @@ class _Fase6bState extends State<Fase6b> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(),

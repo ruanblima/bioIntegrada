@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class SobreApp extends StatefulWidget {
+class SequenciaDidatica extends StatefulWidget {
   @override
-  _SobreAppState createState() => _SobreAppState();
+  _SequenciaDidaticaState createState() => _SequenciaDidaticaState();
 }
 
-class _SobreAppState extends State<SobreApp> {
+class _SequenciaDidaticaState extends State<SequenciaDidatica> {
   double _maxValue(double s, double max) {
     if (s < max) {
       return s;
@@ -47,7 +47,7 @@ class _SobreAppState extends State<SobreApp> {
       ),
       body: const WebView(
         initialUrl:
-            'https://drive.google.com/file/d/1o6Ex2Sdo_8QzU08b7nCXPqZC35yZeeog/view?usp=sharing',
+            'https://drive.google.com/file/d/1Kl9S-0BDOCVp06h3EblO5-vcPuufcyr4/view?usp=sharing',
         javascriptMode: JavascriptMode.unrestricted,
       ),
     );

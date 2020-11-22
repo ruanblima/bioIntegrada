@@ -3,6 +3,7 @@ import 'package:biointegrada/pages/sobreAppWebView.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:biointegrada/pages/sequenciaDidatica.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -36,6 +37,8 @@ class _HomeState extends State<Home> {
       body: Padding(
         padding: EdgeInsets.only(top: size.height * 0.09),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(),
@@ -138,6 +141,8 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   OutlineButton(
                     color: Colors.lightGreen,
+                    borderSide:
+                        BorderSide(width: 1.0, color: Colors.lightGreen),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => SobreApp()));
@@ -151,11 +156,46 @@ class _HomeState extends State<Home> {
                         "SOBRE O BIOINTEGRADA",
                         style: TextStyle(
                             color: Colors.lightGreen,
+                            fontWeight: FontWeight.w300,
                             fontSize: _maxValue(size.width * 0.042, 16),
                             fontFamily: "SnigletRegular"),
                         maxLines: 1,
                       ),
                     ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FlatButton(
+                    color: Colors.lightGreen,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4.0)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SequenciaDidatica()));
+                    },
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        maxWidth: _maxValue(size.width * 0.3, 120),
+                        maxHeight: _maxValue(size.height * 0.05, 30),
+                      ),
+                      child: AutoSizeText(
+                        "SD",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: _maxValue(size.width * 0.06, 21.59),
+                            fontFamily: "SnigletRegular"),
+                        maxLines: 1,
+                      ),
+                    ),
+                    textColor: Colors.white,
                   ),
                 ],
               ),
