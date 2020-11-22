@@ -17,7 +17,7 @@ class _Fase3State extends State<Fase3> {
   String selected = null;
 
   int cont = 1;
-  var caminhoImagem = "images/fase3/tecidoDoIntestinoGrosso.jpg";
+  var caminhoImagem = "images/fase3/tecidoDosRins.jpg";
 
   void loadData() {
     listDrop = [];
@@ -33,41 +33,26 @@ class _Fase3State extends State<Fase3> {
 
     listDrop.add(new DropdownMenuItem(
       child: new Text("Figura 3"),
-      value: "estomago",
-    ));
-
-    listDrop.add(new DropdownMenuItem(
-      child: new Text("Figura 4"),
-      value: "figado",
-    ));
-
-    listDrop.add(new DropdownMenuItem(
-      child: new Text("Figura 5"),
       value: "intestinoFino",
     ));
 
     listDrop.add(new DropdownMenuItem(
-      child: new Text("Figura 6"),
-      value: "intestinoGrosso",
-    ));
-
-    listDrop.add(new DropdownMenuItem(
-      child: new Text("Figura 7"),
+      child: new Text("Figura 4"),
       value: "osso",
     ));
 
     listDrop.add(new DropdownMenuItem(
-      child: new Text("Figura 8"),
+      child: new Text("Figura 5"),
       value: "pele",
     ));
 
     listDrop.add(new DropdownMenuItem(
-      child: new Text("Figura 9"),
+      child: new Text("Figura 6"),
       value: "pulmao",
     ));
 
     listDrop.add(new DropdownMenuItem(
-      child: new Text("Figura 10"),
+      child: new Text("Figura 7"),
       value: "rins",
     ));
   }
@@ -75,25 +60,19 @@ class _Fase3State extends State<Fase3> {
   void _trocarImagem() {
     setState(() {
       if (cont == 2) {
-        caminhoImagem = "images/fase3/tecidoDoFigado.jpg";
-      } else if (cont == 3) {
-        caminhoImagem = "images/fase3/tecidoDosRins.jpg";
-      } else if (cont == 4) {
-        caminhoImagem = "images/fase3/tecidoDoEstomago.jpg";
-      } else if (cont == 5) {
         caminhoImagem = "images/fase3/tecidoDoPulmao.jpg";
-      } else if (cont == 6) {
+      } else if (cont == 3) {
         caminhoImagem = "images/fase3/tecidoDaPele.jpg";
-      } else if (cont == 7) {
+      } else if (cont == 4) {
         caminhoImagem = "images/fase3/tecidoDoCoracao.jpg";
-      } else if (cont == 8) {
+      } else if (cont == 5) {
         caminhoImagem = "images/fase3/tecidoDoIntestinoFino.png";
-      } else if (cont == 9) {
+      } else if (cont == 6) {
         caminhoImagem = "images/fase3/tecidoDoOsso.jpg";
-      } else if (cont == 10) {
+      } else if (cont == 7) {
         caminhoImagem = "images/fase3/tecidoDoCerebro.jpg";
       } else if (cont == 1) {
-        caminhoImagem = "images/fase3/tecidoDoIntestinoGrosso.jpg";
+        caminhoImagem = "images/fase3/tecidoDosRins.jpg";
       }
     });
   }
@@ -407,95 +386,6 @@ class _Fase3State extends State<Fase3> {
                                 ),
                                 child: Container(
                                   child: Image.asset(
-                                      "images/fase3/estomago.jpg",
-                                      fit: BoxFit.cover,
-                                      height: size.height * 0.08,
-                                      width: size.width * 0.18),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 5),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(),
-                              child: AutoSizeText(
-                                "Figura 4",
-                                style: TextStyle(
-                                    color: Colors.lightGreen,
-                                    fontSize: _maxValue(size.width * 0.02, 10),
-                                    fontFamily: "PoetsenOne"),
-                                maxLines: 1,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  maxHeight: 47.36,
-                                  maxWidth: 64.8,
-                                ),
-                                child: Container(
-                                  child: Image.asset("images/fase3/figado.jpg",
-                                      fit: BoxFit.cover,
-                                      height: size.height * 0.08,
-                                      width: size.width * 0.18),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 5),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(),
-                              child: AutoSizeText(
-                                "Figura 5",
-                                style: TextStyle(
-                                    color: Colors.lightGreen,
-                                    fontSize: _maxValue(size.width * 0.02, 10),
-                                    fontFamily: "PoetsenOne"),
-                                maxLines: 1,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  maxHeight: 47.36,
-                                  maxWidth: 64.8,
-                                ),
-                                child: Container(
-                                  child: Image.asset(
                                       "images/fase3/intestinoFino.jpg",
                                       fit: BoxFit.cover,
                                       height: size.height * 0.08,
@@ -516,47 +406,6 @@ class _Fase3State extends State<Fase3> {
               padding: EdgeInsets.all(5),
               child: Row(
                 children: <Widget>[
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(bottom: 5),
-                            child: AutoSizeText(
-                              "Figura 6",
-                              style: TextStyle(
-                                  color: Colors.lightGreen,
-                                  fontSize: _maxValue(size.width * 0.02, 10),
-                                  fontFamily: "PoetsenOne"),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(),
-                            child: ConstrainedBox(
-                              constraints: BoxConstraints(
-                                maxHeight: 47.36,
-                                maxWidth: 64.8,
-                              ),
-                              child: Container(
-                                child: Image.asset(
-                                    "images/fase3/intestinoGrosso.jpg",
-                                    fit: BoxFit.cover,
-                                    height: size.height * 0.08,
-                                    width: size.width * 0.18),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
                   //Column
                   Padding(
                     padding: EdgeInsets.only(left: 5),
@@ -569,7 +418,7 @@ class _Fase3State extends State<Fase3> {
                             Padding(
                               padding: EdgeInsets.only(top: 10),
                               child: AutoSizeText(
-                                "Figura 7",
+                                "Figura 4",
                                 style: TextStyle(
                                     color: Colors.lightGreen,
                                     fontSize: _maxValue(size.width * 0.02, 10),
@@ -613,7 +462,7 @@ class _Fase3State extends State<Fase3> {
                             Padding(
                               padding: EdgeInsets.only(top: 10),
                               child: AutoSizeText(
-                                "Figura 8",
+                                "Figura 5",
                                 style: TextStyle(
                                     color: Colors.lightGreen,
                                     fontSize: _maxValue(size.width * 0.02, 10),
@@ -657,7 +506,7 @@ class _Fase3State extends State<Fase3> {
                             Padding(
                               padding: EdgeInsets.only(bottom: 5),
                               child: AutoSizeText(
-                                "Figura 9",
+                                "Figura 6",
                                 style: TextStyle(
                                     color: Colors.lightGreen,
                                     fontSize: _maxValue(size.width * 0.02, 10),
@@ -701,7 +550,7 @@ class _Fase3State extends State<Fase3> {
                             Padding(
                               padding: EdgeInsets.only(bottom: 5),
                               child: AutoSizeText(
-                                "Figura 10",
+                                "Figura 7",
                                 style: TextStyle(
                                     color: Colors.lightGreen,
                                     fontSize: _maxValue(size.width * 0.02, 10),
@@ -822,22 +671,6 @@ class _Fase3State extends State<Fase3> {
                           borderRadius: BorderRadius.circular(15.0)),
                       onPressed: () {
                         if (cont == 1) {
-                          if (selected == "intestinoGrosso") {
-                            cont++;
-                            _alertVoceAcertou(size);
-                            _trocarImagem();
-                          } else {
-                            _alertVoceErrou(size);
-                          }
-                        } else if (cont == 2) {
-                          if (selected == "figado") {
-                            cont++;
-                            _alertVoceAcertou(size);
-                            _trocarImagem();
-                          } else {
-                            _alertVoceErrou(size);
-                          }
-                        } else if (cont == 3) {
                           if (selected == "rins") {
                             cont++;
                             _alertVoceAcertou(size);
@@ -845,15 +678,7 @@ class _Fase3State extends State<Fase3> {
                           } else {
                             _alertVoceErrou(size);
                           }
-                        } else if (cont == 4) {
-                          if (selected == "estomago") {
-                            cont++;
-                            _alertVoceAcertou(size);
-                            _trocarImagem();
-                          } else {
-                            _alertVoceErrou(size);
-                          }
-                        } else if (cont == 5) {
+                        } else if (cont == 2) {
                           if (selected == "pulmao") {
                             cont++;
                             _alertVoceAcertou(size);
@@ -861,7 +686,7 @@ class _Fase3State extends State<Fase3> {
                           } else {
                             _alertVoceErrou(size);
                           }
-                        } else if (cont == 6) {
+                        } else if (cont == 3) {
                           if (selected == "pele") {
                             cont++;
                             _alertVoceAcertou(size);
@@ -869,7 +694,7 @@ class _Fase3State extends State<Fase3> {
                           } else {
                             _alertVoceErrou(size);
                           }
-                        } else if (cont == 7) {
+                        } else if (cont == 4) {
                           if (selected == "coracao") {
                             cont++;
                             _alertVoceAcertou(size);
@@ -877,7 +702,7 @@ class _Fase3State extends State<Fase3> {
                           } else {
                             _alertVoceErrou(size);
                           }
-                        } else if (cont == 8) {
+                        } else if (cont == 5) {
                           if (selected == "intestinoFino") {
                             cont++;
                             _alertVoceAcertou(size);
@@ -885,7 +710,7 @@ class _Fase3State extends State<Fase3> {
                           } else {
                             _alertVoceErrou(size);
                           }
-                        } else if (cont == 9) {
+                        } else if (cont == 6) {
                           if (selected == "osso") {
                             cont++;
                             _alertVoceAcertou(size);
@@ -893,7 +718,7 @@ class _Fase3State extends State<Fase3> {
                           } else {
                             _alertVoceErrou(size);
                           }
-                        } else if (cont == 10) {
+                        } else if (cont == 7) {
                           if (selected == "cerebro") {
                             cont = 1;
                             _alertVoceAcertou(size);
