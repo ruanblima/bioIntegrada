@@ -60,7 +60,7 @@ class _Fase3State extends State<Fase3> {
   void _trocarImagem() {
     setState(() {
       if (cont == 2) {
-        caminhoImagem = "images/fase3/tecidoDoPulmao.jpg";
+        caminhoImagem = "images/fase3/tecidoDoPulmao.png";
       } else if (cont == 3) {
         caminhoImagem = "images/fase3/tecidoDaPele.jpg";
       } else if (cont == 4) {

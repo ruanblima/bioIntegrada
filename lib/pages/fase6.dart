@@ -4,6 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:biointegrada/main.dart';
 import 'package:biointegrada/pages/fase6b.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Fase6 extends StatefulWidget {
@@ -14,6 +15,14 @@ class Fase6 extends StatefulWidget {
 class _Fase6State extends State<Fase6> {
   List<DropdownMenuItem<String>> listDrop = [];
   String selected = null;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _alertInit();
+    });
+  }
 
   int cont = 1;
   var caminhoImagem = "images/fase6/amebiase.jpg";
@@ -68,6 +77,52 @@ class _Fase6State extends State<Fase6> {
         caminhoImagem = "images/fase6/amebiase.jpg";
       }
     });
+  }
+
+  Future<void> _alertInit() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(""),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Nosso organismo está integrado a outros organismos do meio ambiente de diversas formas. Como exemplo trazemos alguns ciclos de verminoses aos quais o ser humano é hospedeiro.",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: 15,
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton.icon(
+              color: Colors.lightGreen,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(
+                FontAwesomeIcons.solidWindowClose,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Fechar",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: "SnigletRegular"),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<void> _alertVoceAcertou(size) async {
@@ -260,7 +315,7 @@ class _Fase6State extends State<Fase6> {
                   "Analise a imagem e indique qual ciclo de verminose está representando",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
                   maxLines: 2,
                 ),

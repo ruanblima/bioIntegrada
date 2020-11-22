@@ -286,9 +286,9 @@ class _Fase4State extends State<Fase4> {
                   "Analise as imagens e escolha a opção que corresponde a seu respectivo sistema.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
-                  maxLines: 3,
+                  maxLines: 2,
                 ),
               ),
             ),

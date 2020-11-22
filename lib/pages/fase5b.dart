@@ -217,7 +217,7 @@ class _Fase5bState extends State<Fase5b> {
                   "Marque a imagem que representa corretamente a localização dos órgãos no corpo feminino.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
                   maxLines: 2,
                 ),

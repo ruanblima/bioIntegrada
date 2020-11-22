@@ -20,6 +20,66 @@ class _Fase8State extends State<Fase8> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _alertInit();
+    });
+  }
+
+  Future<void> _alertInit() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Parabéns!',
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontSize: 20,
+                fontFamily: "PoetsenOne"),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "Você preencheu todos os desafios até aqui de forma correta. Esta fase é o último requisito para finalizar o jogo. Preencha o questionário com uma visão crítica de suas ações no dia-a-dia, analisando suas atitudes reais e desejadas para cada situação cotidiana, e os impactos que elas causam no meio ambiente. Desejamos boa reflexão!",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: 15,
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton.icon(
+              color: Colors.lightGreen,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(
+                FontAwesomeIcons.solidWindowClose,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Fechar",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: "SnigletRegular"),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     Size size = mediaQuery.size;

@@ -251,7 +251,7 @@ class _Fase7State extends State<Fase7> {
                   "Associe uma opção a cada imagem que melhor representa o nível ecológico indicado.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
                   maxLines: 2,
                 ),

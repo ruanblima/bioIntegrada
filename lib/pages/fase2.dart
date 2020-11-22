@@ -285,9 +285,9 @@ class _Fase2State extends State<Fase2> {
                   "Em cada imagem dos tecidos histológicos, escolha a opção que classifica corretamente o tipo de tecido representado.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
-                  maxLines: 3,
+                  maxLines: 2,
                 ),
               ),
             ),

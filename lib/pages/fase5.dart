@@ -22,12 +22,61 @@ class _Fase5State extends State<Fase5> {
   void initState() {
     super.initState();
     selectedRadio = 0;
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _alertInit();
+    });
   }
 
   setSelectedRadio(int val) {
     setState(() {
       selectedRadio = val;
     });
+  }
+
+  Future<void> _alertInit() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(""),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  "As especializações das estruturas vistas nas fases anteriores trabalham de forma integrada proporcionando o funcionamento do organismo. ",
+                  style: TextStyle(
+                      color: Colors.lightGreen,
+                      fontSize: 15,
+                      fontFamily: "SnigletRegular"),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton.icon(
+              color: Colors.lightGreen,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0)),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(
+                FontAwesomeIcons.solidWindowClose,
+                color: Colors.white,
+              ),
+              label: Text(
+                "Fechar",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontFamily: "SnigletRegular"),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Future<void> _alertVoceAcertou(size) async {
@@ -217,7 +266,7 @@ class _Fase5State extends State<Fase5> {
                   "Marque a imagem que representa corretamente a localização dos órgãos no corpo masculino.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
                   maxLines: 2,
                 ),

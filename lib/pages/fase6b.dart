@@ -258,7 +258,7 @@ class _Fase6bState extends State<Fase6b> {
                   "Analise as imagens e classifique a qual ciclo de verminose está relacionada.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
                   maxLines: 2,
                 ),
