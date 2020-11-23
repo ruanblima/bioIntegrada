@@ -135,7 +135,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: size.height * 0.01),
+              padding: EdgeInsets.only(top: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -167,14 +167,14 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(),
+              padding: EdgeInsets.only(top: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  FlatButton(
+                  OutlineButton(
                     color: Colors.lightGreen,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4.0)),
+                    borderSide:
+                        BorderSide(width: 1.0, color: Colors.lightGreen),
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -183,19 +183,19 @@ class _HomeState extends State<Home> {
                     },
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
-                        maxWidth: _maxValue(size.width * 0.3, 120),
-                        maxHeight: _maxValue(size.height * 0.05, 30),
+                        maxWidth: _maxValue(size.width * 0.50, 200),
+                        maxHeight: _maxValue(size.height * 0.2, 30),
                       ),
                       child: AutoSizeText(
                         "SD",
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: _maxValue(size.width * 0.06, 21.59),
+                            color: Colors.lightGreen,
+                            fontWeight: FontWeight.w300,
+                            fontSize: _maxValue(size.width * 0.042, 16),
                             fontFamily: "SnigletRegular"),
                         maxLines: 1,
                       ),
                     ),
-                    textColor: Colors.white,
                   ),
                 ],
               ),
