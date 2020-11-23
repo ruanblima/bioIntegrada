@@ -293,7 +293,7 @@ class _Fase4State extends State<Fase4> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(),
+              padding: EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -313,19 +313,19 @@ class _Fase4State extends State<Fase4> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(),
+              padding: EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   DropdownButton(
                     items: listDrop,
                     value: selected,
-                    iconSize: _maxValue(size.width * 0.05, 22),
+                    iconSize: _maxValue(size.width * 0.07, 25),
                     elevation: 16,
                     hint: AutoSizeText(
                       "Selecione uma opção",
                       style:
-                          TextStyle(fontSize: _maxValue(size.width * 0.04, 15)),
+                          TextStyle(fontSize: _maxValue(size.width * 0.08, 20)),
                     ),
                     onChanged: (value) {
                       selected = value;
@@ -336,7 +336,7 @@ class _Fase4State extends State<Fase4> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: size.height * 0.01),
+              padding: EdgeInsets.only(top: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

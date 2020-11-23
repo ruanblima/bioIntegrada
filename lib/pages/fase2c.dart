@@ -246,20 +246,25 @@ class _Fase2cState extends State<Fase2c> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(5),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: size.width,
-                  //maxHeight: _maxValue(size.height * 0.30, 200),
-                ),
-                child: AutoSizeText(
-                  "Em cada imagem dos tecidos histológicos, escolha a opção que classifica corretamente o tipo de tecido representado.",
-                  style: TextStyle(
-                      color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.1739, 25),
-                      fontFamily: "SnigletRegular"),
-                  maxLines: 2,
-                ),
+              padding: EdgeInsets.only(top: size.height * 0.01),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: size.width,
+                      //maxHeight: _maxValue(size.height * 0.30, 200),
+                    ),
+                    child: AutoSizeText(
+                      "Em cada imagem dos tecidos histológicos, escolha a opção que classifica corretamente o tipo de tecido representado.",
+                      style: TextStyle(
+                          color: Colors.lightGreen,
+                          fontSize: _maxValue(size.width * 0.1739, 25),
+                          fontFamily: "SnigletRegular"),
+                      maxLines: 3,
+                    ),
+                  ),
+                ],
               ),
             ),
             Padding(
@@ -301,12 +306,12 @@ class _Fase2cState extends State<Fase2c> {
                   DropdownButton(
                     items: listDrop,
                     value: selected,
-                    iconSize: _maxValue(size.width * 0.05, 22),
+                    iconSize: _maxValue(size.width * 0.07, 25),
                     elevation: 16,
                     hint: AutoSizeText(
                       "Selecione uma opção",
                       style:
-                          TextStyle(fontSize: _maxValue(size.width * 0.04, 15)),
+                          TextStyle(fontSize: _maxValue(size.width * 0.08, 20)),
                     ),
                     onChanged: (value) {
                       selected = value;

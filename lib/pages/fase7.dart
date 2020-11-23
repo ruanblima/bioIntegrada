@@ -285,12 +285,12 @@ class _Fase7State extends State<Fase7> {
                   DropdownButton(
                     items: listDrop,
                     value: selected,
-                    iconSize: _maxValue(size.width * 0.05, 22),
+                    iconSize: _maxValue(size.width * 0.07, 25),
                     elevation: 16,
                     hint: AutoSizeText(
                       "Selecione uma opção",
                       style:
-                          TextStyle(fontSize: _maxValue(size.width * 0.04, 15)),
+                          TextStyle(fontSize: _maxValue(size.width * 0.08, 20)),
                     ),
                     onChanged: (value) {
                       selected = value;

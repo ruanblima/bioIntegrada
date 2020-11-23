@@ -633,12 +633,12 @@ class _Fase3State extends State<Fase3> {
                   DropdownButton(
                     items: listDrop,
                     value: selected,
-                    iconSize: _maxValue(size.width * 0.05, 19),
+                    iconSize: _maxValue(size.width * 0.07, 25),
                     elevation: 16,
                     hint: AutoSizeText(
                       "Selecione uma opção",
                       style:
-                          TextStyle(fontSize: _maxValue(size.width * 0.04, 15)),
+                          TextStyle(fontSize: _maxValue(size.width * 0.08, 20)),
                     ),
                     onChanged: (value) {
                       selected = value;
@@ -650,7 +650,7 @@ class _Fase3State extends State<Fase3> {
             ),
             //Row
             Padding(
-              padding: EdgeInsets.only(),
+              padding: EdgeInsets.only(top: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

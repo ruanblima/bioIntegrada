@@ -264,123 +264,132 @@ class _Fase6bState extends State<Fase6b> {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: 337.44,
-                    maxWidth: 342,
-                  ),
-                  child: Container(
-                    child: Image.asset(caminhoImagem,
-                        fit: BoxFit.cover,
-                        height: size.height * 0.57,
-                        width: size.width * 0.95),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                DropdownButton(
-                  items: listDrop,
-                  value: selected,
-                  iconSize: _maxValue(size.width * 0.045, 19),
-                  elevation: 16,
-                  hint: AutoSizeText(
-                    "Selecione uma opção",
-                    style:
-                        TextStyle(fontSize: _maxValue(size.width * 0.04, 15)),
-                  ),
-                  onChanged: (value) {
-                    selected = value;
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(),
-                  child: FlatButton(
-                    color: Colors.lightGreen,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxWidth: _maxValue(size.width * 0.3, 120),
-                        maxHeight: _maxValue(size.height * 0.05, 30),
-                      ),
-                      child: AutoSizeText(
-                        "RETORNAR",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: _maxValue(size.width * 0.06, 21.59),
-                            fontFamily: "SnigletRegular"),
-                        maxLines: 1,
-                      ),
+            Padding(
+              padding: EdgeInsets.only(top: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: 337.44,
+                      maxWidth: 342,
                     ),
-                    textColor: Colors.white,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: size.width * 0.04),
-                  child: FlatButton(
-                    color: Colors.lightGreen,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0)),
-                    onPressed: () {
-                      if (cont == 1) {
-                        if (selected == "esquistossomose") {
-                          cont++;
-                          _alertVoceAcertou(size);
-                          _trocarImagem();
-                        } else {
-                          _alertVoceErrou(size);
-                        }
-                      } else if (cont == 2) {
-                        if (selected == "giardiase") {
-                          cont++;
-                          _alertVoceAcertou(size);
-                          _trocarImagem();
-                        } else {
-                          _alertVoceErrou(size);
-                        }
-                      } else if (cont == 3) {
-                        if (selected == "oxiuriaseOuEnterobiase") {
-                          cont = 1;
-                          _alertVoceAcertou(size);
-                          _trocarImagem();
-                          carregar();
-                        } else {
-                          _alertVoceErrou(size);
-                        }
-                      }
-                    },
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        maxWidth: _maxValue(size.width * 0.3, 120),
-                        maxHeight: _maxValue(size.height * 0.05, 30),
-                      ),
-                      child: AutoSizeText(
-                        "  AVANÇAR  ",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: _maxValue(size.width * 0.06, 21.59),
-                            fontFamily: "SnigletRegular"),
-                      ),
+                    child: Container(
+                      child: Image.asset(caminhoImagem,
+                          fit: BoxFit.cover,
+                          height: size.height * 0.57,
+                          width: size.width * 0.95),
                     ),
-                    textColor: Colors.white,
                   ),
-                ),
-              ],
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 35),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  DropdownButton(
+                    items: listDrop,
+                    value: selected,
+                    iconSize: _maxValue(size.width * 0.07, 25),
+                    elevation: 16,
+                    hint: AutoSizeText(
+                      "Selecione uma opção",
+                      style:
+                          TextStyle(fontSize: _maxValue(size.width * 0.08, 20)),
+                    ),
+                    onChanged: (value) {
+                      selected = value;
+                      setState(() {});
+                    },
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "RETORNAR",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                          maxLines: 1,
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: size.width * 0.04),
+                    child: FlatButton(
+                      color: Colors.lightGreen,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      onPressed: () {
+                        if (cont == 1) {
+                          if (selected == "esquistossomose") {
+                            cont++;
+                            _alertVoceAcertou(size);
+                            _trocarImagem();
+                          } else {
+                            _alertVoceErrou(size);
+                          }
+                        } else if (cont == 2) {
+                          if (selected == "giardiase") {
+                            cont++;
+                            _alertVoceAcertou(size);
+                            _trocarImagem();
+                          } else {
+                            _alertVoceErrou(size);
+                          }
+                        } else if (cont == 3) {
+                          if (selected == "oxiuriaseOuEnterobiase") {
+                            cont = 1;
+                            _alertVoceAcertou(size);
+                            _trocarImagem();
+                            carregar();
+                          } else {
+                            _alertVoceErrou(size);
+                          }
+                        }
+                      },
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: _maxValue(size.width * 0.3, 120),
+                          maxHeight: _maxValue(size.height * 0.05, 30),
+                        ),
+                        child: AutoSizeText(
+                          "  AVANÇAR  ",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: _maxValue(size.width * 0.06, 21.59),
+                              fontFamily: "SnigletRegular"),
+                        ),
+                      ),
+                      textColor: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

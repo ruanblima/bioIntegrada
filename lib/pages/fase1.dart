@@ -231,8 +231,8 @@ class _Fase1State extends State<Fase1> {
                 children: <Widget>[
                   ConstrainedBox(
                     constraints: BoxConstraints(
-                      maxWidth: _maxValue(size.width * 0.95, 350),
-                      maxHeight: _maxValue(size.height * 0.35, 20),
+                      maxWidth: size.width,
+                      //maxHeight: _maxValue(size.height * 0.30, 200),
                     ),
                     child: AutoSizeText(
                       "Selecione o nome que corresponde a cada célula.",

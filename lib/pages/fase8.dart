@@ -144,7 +144,7 @@ class _Fase8State extends State<Fase8> {
                   "Para finalizar preencha ao questionário, marcando uma ou mais opções.",
                   style: TextStyle(
                       color: Colors.lightGreen,
-                      fontSize: _maxValue(size.width * 0.0439, 16),
+                      fontSize: _maxValue(size.width * 0.1739, 25),
                       fontFamily: "SnigletRegular"),
                   maxLines: 2,
                 ),
