@@ -92,8 +92,8 @@ class _Fase6State extends State<Fase6> {
                 Text(
                   "Nosso organismo está integrado a outros organismos do meio ambiente de diversas formas. Como exemplo trazemos alguns ciclos de verminoses aos quais o ser humano é hospedeiro.",
                   style: TextStyle(
-                      color: Colors.lightGreen,
-                      fontSize: 15,
+                      color: Colors.green,
+                      fontSize: 18,
                       fontFamily: "SnigletRegular"),
                 ),
               ],
@@ -101,7 +101,7 @@ class _Fase6State extends State<Fase6> {
           ),
           actions: <Widget>[
             FlatButton.icon(
-              color: Colors.lightGreen,
+              color: Colors.green,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
               onPressed: () {

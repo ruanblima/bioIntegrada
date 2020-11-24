@@ -309,14 +309,14 @@ class _Fase3State extends State<Fase3> {
                             padding: EdgeInsets.only(),
                             child: ConstrainedBox(
                               constraints: BoxConstraints(
-                                maxHeight: 47.36,
-                                maxWidth: 64.8,
+                                maxHeight: 60,
+                                maxWidth: 75,
                               ),
                               child: Container(
                                 child: Image.asset("images/fase3/cerebro.jpg",
                                     fit: BoxFit.cover,
-                                    height: size.height * 0.08,
-                                    width: size.width * 0.18),
+                                    height: size.height * 0.18,
+                                    width: size.width * 0.28),
                               ),
                             ),
                           ),
@@ -352,14 +352,14 @@ class _Fase3State extends State<Fase3> {
                               padding: EdgeInsets.only(),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
-                                  maxHeight: 47.36,
-                                  maxWidth: 64.8,
+                                  maxHeight: 60,
+                                  maxWidth: 75,
                                 ),
                                 child: Container(
                                   child: Image.asset("images/fase3/coracao.png",
                                       fit: BoxFit.cover,
-                                      height: size.height * 0.08,
-                                      width: size.width * 0.18),
+                                      height: size.height * 0.18,
+                                      width: size.width * 0.28),
                                 ),
                               ),
                             ),
@@ -396,15 +396,15 @@ class _Fase3State extends State<Fase3> {
                               padding: EdgeInsets.only(),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
-                                  maxHeight: 47.36,
-                                  maxWidth: 64.8,
+                                  maxHeight: 60,
+                                  maxWidth: 75,
                                 ),
                                 child: Container(
                                   child: Image.asset(
                                       "images/fase3/intestinoFino.jpg",
                                       fit: BoxFit.cover,
-                                      height: size.height * 0.08,
-                                      width: size.width * 0.18),
+                                      height: size.height * 0.18,
+                                      width: size.width * 0.28),
                                 ),
                               ),
                             ),
@@ -438,7 +438,7 @@ class _Fase3State extends State<Fase3> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(top: 4),
+                              padding: EdgeInsets.only(top: 12),
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
                                   maxHeight: 71.03,
@@ -447,8 +447,8 @@ class _Fase3State extends State<Fase3> {
                                 child: Container(
                                   child: Image.asset("images/fase3/osso.jpg",
                                       fit: BoxFit.cover,
-                                      height: size.height * 0.10,
-                                      width: size.width * 0.16),
+                                      height: size.height * 0.16,
+                                      width: size.width * 0.26),
                                 ),
                               ),
                             ),
@@ -496,13 +496,13 @@ class _Fase3State extends State<Fase3> {
                               child: ConstrainedBox(
                                 constraints: BoxConstraints(
                                   maxHeight: 71.03,
-                                  maxWidth: 64.8,
+                                  maxWidth: 95.8,
                                 ),
                                 child: Container(
                                   child: Image.asset("images/fase3/pele.jpg",
                                       fit: BoxFit.cover,
                                       height: size.height * 0.10,
-                                      width: size.width * 0.18),
+                                      width: size.width * 0.30),
                                 ),
                               ),
                             ),

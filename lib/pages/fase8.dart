@@ -36,9 +36,7 @@ class _Fase8State extends State<Fase8> {
           title: Text(
             'Parabéns!',
             style: TextStyle(
-                color: Colors.lightGreen,
-                fontSize: 20,
-                fontFamily: "PoetsenOne"),
+                color: Colors.green, fontSize: 20, fontFamily: "PoetsenOne"),
           ),
           content: SingleChildScrollView(
             child: ListBody(
@@ -46,8 +44,8 @@ class _Fase8State extends State<Fase8> {
                 Text(
                   "Você preencheu todos os desafios até aqui de forma correta. Esta fase é o último requisito para finalizar o jogo. Preencha o questionário com uma visão crítica de suas ações no dia-a-dia, analisando suas atitudes reais e desejadas para cada situação cotidiana, e os impactos que elas causam no meio ambiente. Desejamos boa reflexão!",
                   style: TextStyle(
-                      color: Colors.lightGreen,
-                      fontSize: 15,
+                      color: Colors.green,
+                      fontSize: 18,
                       fontFamily: "SnigletRegular"),
                 ),
               ],
@@ -55,7 +53,7 @@ class _Fase8State extends State<Fase8> {
           ),
           actions: <Widget>[
             FlatButton.icon(
-              color: Colors.lightGreen,
+              color: Colors.green,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
               onPressed: () {

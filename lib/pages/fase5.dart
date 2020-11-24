@@ -46,8 +46,8 @@ class _Fase5State extends State<Fase5> {
                 Text(
                   "As especializações das estruturas vistas nas fases anteriores trabalham de forma integrada proporcionando o funcionamento do organismo. ",
                   style: TextStyle(
-                      color: Colors.lightGreen,
-                      fontSize: 15,
+                      color: Colors.green,
+                      fontSize: 18,
                       fontFamily: "SnigletRegular"),
                 ),
               ],
@@ -55,7 +55,7 @@ class _Fase5State extends State<Fase5> {
           ),
           actions: <Widget>[
             FlatButton.icon(
-              color: Colors.lightGreen,
+              color: Colors.green,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
               onPressed: () {
